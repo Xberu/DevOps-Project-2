@@ -1,7 +1,7 @@
 variable "environment_name" {
   type = string
   description = "Name of the environment"
-  default = "us-east-1"
+  default = "dev"
 }
 
 

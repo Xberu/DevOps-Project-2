@@ -10,8 +10,16 @@ terraform {
       version = "~> 3.9.0"
         }
     }
+# Remote backend configuration
+backend "s3" {
+  bucket = "tfstate-dev-us-east-1-8wwu3c"
+  key    = "lockfile/dev/terraform.tfstate"
+  region = "us-east-1"
+  encrypt = true
+  use_lockfile = true
+}
 }
 
 provider "aws" {
-  region = "var.aws_region"
+  region = var.aws_region
 }
