@@ -13,7 +13,7 @@ s3plan*
 crash.log
 
 # Variable files containing secrets
-*.tfvars
+# *.tfvars => Commented out to allow users to keep their variable definitions in version control if they choose to do so. Uncomment the line below to ignore all .tfvars files.
 *.tfvars.json
 
 # Override files
@@ -25,3 +25,10 @@ override.tf.json
 # CLI config files
 .terraformrc
 terraform.rc
+
+# Ignore .env files if they contain sensitive information
+.env
+
+# Ignore any other files that may contain sensitive information
+.terraform.lock.hcl
+*.terraform.lock.hcl
