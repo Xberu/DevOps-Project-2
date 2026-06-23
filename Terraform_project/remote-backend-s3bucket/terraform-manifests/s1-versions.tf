@@ -11,13 +11,13 @@ terraform {
         }
     }
 # Remote backend configuration
-backend "s3" {
-  bucket = "tfstate-dev-us-east-1-8wwu3c"
-  key    = "lockfile/dev/terraform.tfstate"
-  region = "us-east-1"
-  encrypt = true
-  use_lockfile = true
-}
+# backend "s3" {
+#   bucket = "tfstate-dev-us-east-1-r5cams"
+#   key    = "lockfile/dev/terraform.tfstate"
+#   region = "us-east-1"
+#   encrypt = true
+#   use_lockfile = true
+# }
 }
 
 provider "aws" {

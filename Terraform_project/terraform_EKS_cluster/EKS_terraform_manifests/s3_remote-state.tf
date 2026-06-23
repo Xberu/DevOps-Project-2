@@ -1,10 +1,9 @@
-# DataSource
+# DataSource - Read VPC outputs from remote S3 state
 data "terraform_remote_state" "vpc" {
   backend = "s3"
-
   config = {
-    bucket = "tfstate-dev-us-east-1-8wwu3c" #change after creating s3 bucket for remote state
-    key = "lockfile/dev/terraform.tfstate" #verify once
+    bucket = "tfstate-dev-us-east-1-r5cams"
+    key = "lockfile/dev/VPC/terraform.tfstate"
     region = var.aws_region
   }
 }

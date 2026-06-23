@@ -12,13 +12,13 @@ terraform {
     }
   }
   # Remote backend configuration
-# backend "s3" {
-#   bucket = "tfstate-dev-us-east-1-8wwu3c"
-#   key    = "lockfile/dev/terraform.tfstate"
-#   region = "us-east-1"
-#   encrypt = true
-#   use_lockfile = true
-# } until the backend is configured, the state will be stored locally in terraform.tfstate file
+backend "s3" {
+  bucket = "tfstate-dev-us-east-1-r5cams"
+  key    = "lockfile/dev/VPC/terraform.tfstate"
+  region = "us-east-1"
+  encrypt = true
+  use_lockfile = true
+} # until the backend is configured, the state will be stored locally in terraform.tfstate file
 }
 
 # provider Block

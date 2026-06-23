@@ -2,21 +2,26 @@
 set -e
 
 echo "Creating vpc  with Terraform..."
-echo"==============================="
+echo "==============================="
 
 cd VPC_terraform_manifests
-terraform init
+terraform init -reconfigure
+terraform validate
+terraform plan 
+
 terraform apply -auto-approve
 
 echo "VPC created successfully!"
-echo"==============================="
+echo "==============================="
 
 echo "creating EKS cluster with Terraform..."
-echo"==============================="
+echo "==============================="
 
 cd ../EKS_terraform_manifests
-terraform init
+terraform init -reconfigure
+terraform validate
+terraform plan 
 terraform apply -auto-approve
 
 echo "EKS cluster created successfully!"
-echo"==============================="
+echo "==============================="
